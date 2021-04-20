@@ -7,11 +7,12 @@ RUN apt-get update && apt-get install -y \
 
 # enable needed modules
 RUN a2enmod auth_openidc && \
-    a2enmod ssl && \
-    a2enmod rewrite && \
+    a2enmod headers && \
     a2enmod proxy && \
     a2enmod proxy_http && \
-    a2enmod proxy_wstunnel
+    a2enmod proxy_wstunnel && \
+    a2enmod rewrite && \
+    a2enmod ssl
 
 # disable default virtual host
 RUN a2dissite 000-default
