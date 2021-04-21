@@ -1,6 +1,7 @@
 FROM ubuntu:20.04
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y tzdata && \
+    apt-get update && apt-get install -y \
     apache2 \
     libapache2-mod-auth-openidc && \
     rm -rf /var/lib/apt/lists/*
