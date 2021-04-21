@@ -8,7 +8,6 @@ RUN apt-get update && apt-get install -y tzdata && \
 
 # enable needed modules
 RUN a2enmod auth_openidc && \
-    a2enmod headers && \
     a2enmod proxy && \
     a2enmod proxy_http && \
     a2enmod proxy_wstunnel && \
