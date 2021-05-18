@@ -1,0 +1,22 @@
+{
+  "clientId": "",
+  "name": "",
+  "description": "",
+  "rootUrl": "",
+  "baseUrl": "/",
+  "redirectUris": [
+    "/relative/redirect/path",
+    "/these/can/use/wildcards/*",
+    "/redirect_uri"
+  ],
+  "webOrigins": ["+"],
+  "bearerOnly": false,
+  "consentRequired": true,
+  "standardFlowEnabled": true,
+  "implicitFlowEnabled": true,
+  "directAccessGrantsEnabled": false,
+  "serviceAccountsEnabled": true,
+  "attributes": {
+    "contacts": ""
+  }
+}
