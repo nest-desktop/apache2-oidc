@@ -1,9 +1,12 @@
 FROM ubuntu:20.04
+LABEL maintainer="Sebastian Spreizer <spreizer@web.de>"
+ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y tzdata && \
-    apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y \
     apache2 \
-    libapache2-mod-auth-openidc && \
+    libapache2-mod-auth-openidc
+
+RUN apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
 # enable needed modules
@@ -23,7 +26,6 @@ RUN a2dissite 000-default
 RUN chmod -R 777 /var/log/apache2 && \
     ln -sf /proc/self/fd/1 /var/log/apache2/other_vhosts_access.log && \
     ln -sf /proc/self/fd/2 /var/log/apache2/error.log
-
 
 COPY vhost.conf /etc/apache2/sites-enabled/
 COPY ports.conf /etc/apache2/
