@@ -12,4 +12,4 @@ curl -s -X POST https://iam.ebrains.eu/auth/realms/hbp/clients-registrations/def
   -d @clients/app.json |
 
 # Pretty print the JSON response
- json_pp;
+json_pp;
