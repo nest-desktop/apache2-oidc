@@ -1,56 +1,90 @@
-# apache2-oidc
+# OpenID Connect implementation for Apache2
 
-This project contains apache2 configuration that makes apps available to users on EBRAINS infrastructure.
-To visit the app user has to authenticate via OpenID connect (oidc).
-But you have to create OIDC client first (See steps below).
+This project contains Apache2 template implemented with via OpenID Connect (OIDC)
+that can authenticate users on apps in the EBRAINS infrastructure.
 
-### Steps to create OIDC client for the community app.
+But first create OIDC Client
+that the client is registered for the OpenID Connect.
 
-For detailed guide about community app in the collaboratory, please visit the page
-(<https://wiki.ebrains.eu/bin/view/Collabs/collaboratory-community-apps>).
+### Steps to create OIDC Client.
+
+The guide shows steps how to create OIDC client for an EBRAINS app
+You can review and use provided scripts.
 
 Requirements
-  - curl
 
-The current workspace is `./collab2-oidc`.
+- curl
+- json_pp
 
-#### 1. Fetch developer access token
+#### Preparation
 
-Execute
+Install `curl` and `json_pp` if not installed:
+
+```
+  sudo apt install curl json_pp
+```
+
+Then change the directory to collab-oidc:
+
+```
+  cd ./collab2-oidc
+```
+
+#### 1. Get developer access token
+
+Get the developer access token
+after entering `username` and `password` of your EBRAINS account:
+
 ```
   bash get-dev-token.sh
 ```
 
-#### 2. Change configuration and create client
+Use `access_token` to create client.
 
-Change data in `collab2-oidc/app-client.json` or use another json file.
-Then execute
+#### 2. Create client
+
+Change the configuration for the client, e.g. `clients/app.json`.
+Then create client with developer `access_token` and a configuration file
+
 ```
   bash create-client.sh
 ```
 
-**Important**:
-You should save client secret (`secret`) secretely.
-The client registration access token (`registrationAccessToken`) will be needed for modifying clients.
+**Important:**
+Keep `clientId`, `secret` and `registrationAccessToken` secretly.
 
-#### 3. Fetch registration access token
+#### 3. Modify client
 
-The client registration access token can be requested only if `serviceAccountsEnabled=True`.
+Use `registrationAccessToken` and `clientId` to modify client:
 
-First execute
-```
-  bash get-client-token.sh
-```
-
-Then execute
 ```
   bash modify-client.sh
 ```
 
+**Important**
+When the client is modify, it generates new `registrationAccessToken`.
+
+#### 4. Get client access token
+
+The client access token can be requested if `serviceAccountsEnabled=True`.
+
+```
+  bash get-client-token.sh
+```
+
 ### Useful Links
 
-Tutorial about the migration in the Drive of the above collab
-(<https://wiki.ebrains.eu/bin/view/Collabs/collaboratory-migration/Tutorial/Migrate%20OIDC%20Client/>).
+EBRAINS tutorials for OpenID Client
 
-All the availables url for OIDC 2
-(<https://iam.ebrains.eu/auth/realms/hbp/.well-known/uma2-configuration>)
+- [Migrate OIDC Client](https://wiki.ebrains.eu/bin/view/Collabs/collaboratory-migration/Tutorial/Migrate%20OIDC%20Client/).
+- [Available keywords for OpenID Client](https://iam.ebrains.eu/auth/realms/hbp/.well-known/uma2-configuration)
+- [Tutorial for community apps](https://wiki.ebrains.eu/bin/view/Collabs/collaboratory-community-apps)
+
+Offical guides
+
+- [Certified OpenID Connect Implementations](https://openid.net/developers/certified/)
+
+Apache2
+
+- [OpenID Connect implementation for Apache2](https://github.com/zmartzone/mod_auth_openidc)
+- [Apache2 Plugin for OpenIC Connect](https://www.keycloak.org/docs/latest/securing_apps/index.html#_mod_auth_openidc)
