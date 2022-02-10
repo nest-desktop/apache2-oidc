@@ -76,9 +76,9 @@ The client access token can be requested if `serviceAccountsEnabled=True`.
 
 EBRAINS tutorials for OpenID Client
 
-- [Migrate OIDC Client](https://wiki.ebrains.eu/bin/view/Collabs/collaboratory-migration/Tutorial/Migrate%20OIDC%20Client/).
-- [Available keywords for OpenID Client](https://iam.ebrains.eu/auth/realms/hbp/.well-known/uma2-configuration)
 - [Tutorial for community apps](https://wiki.ebrains.eu/bin/view/Collabs/collaboratory-community-apps)
+- [Available keywords for OpenID Client](https://iam.ebrains.eu/auth/realms/hbp/.well-known/uma2-configuration)
+- [Migrate OIDC Client](https://wiki.ebrains.eu/bin/view/Collabs/collaboratory-migration/Tutorial/Migrate%20OIDC%20Client/)
 
 Offical guides
 
@@ -88,3 +88,11 @@ Apache2
 
 - [OpenID Connect implementation for Apache2](https://github.com/zmartzone/mod_auth_openidc)
 - [Apache2 Plugin for OpenIC Connect](https://www.keycloak.org/docs/latest/securing_apps/index.html#_mod_auth_openidc)
+
+#### Acknowledgements
+
+Thanks for the technical support:
+
+- Fabrice Gallard
+- Axel Messinese
+- Marc Morgan
