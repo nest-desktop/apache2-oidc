@@ -12,8 +12,8 @@
   "webOrigins": ["+"],
   "bearerOnly": false,
   "consentRequired": true,
-  "standardFlowEnabled": true,
-  "implicitFlowEnabled": true,
+  "standardFlowEnabled": true (for backend),
+  "implicitFlowEnabled": true (for frontend),
   "directAccessGrantsEnabled": false,
   "serviceAccountsEnabled": true,
   "attributes": {

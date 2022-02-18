@@ -62,7 +62,8 @@ Use `registrationAccessToken` and `clientId` to modify client:
 ```
 
 **Important**
-When the client is modify, it generates new `registrationAccessToken`.
+Each time you modify your client, a new registration access token will be generated.
+You need to keep track of your token changes to keep access to your client.
 
 #### 4. Get client access token
 
@@ -79,6 +80,7 @@ EBRAINS tutorials for OpenID Client
 - [Tutorial for community apps](https://wiki.ebrains.eu/bin/view/Collabs/collaboratory-community-apps)
 - [Available keywords for OpenID Client](https://iam.ebrains.eu/auth/realms/hbp/.well-known/uma2-configuration)
 - [Migrate OIDC Client](https://wiki.ebrains.eu/bin/view/Collabs/collaboratory-migration/Tutorial/Migrate%20OIDC%20Client/)
+- [Jupyter lab](https://lab.ebrains.eu/user/user-redirect/lab/tree/shared/Collaboratory%20Community%20Apps/Managing%20an%20OpenID%20Connect%20client.ipynb)
 
 Offical guides
 

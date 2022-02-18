@@ -13,9 +13,9 @@ echo ''
 
 # Request to get an access token
 curl -s -X POST https://iam.ebrains.eu/auth/realms/hbp/protocol/openid-connect/token \
-  -d "grant_type=client_credentials&scope=email%20profile%20team%20group%20clb.wiki.read%20clb.wiki.write" \
-  --data-urlencode "client_id=${clb_client_id}" \
-  --data-urlencode "client_secret=${clb_client_secret}" |
+     -d 'grant_type=client_credentials&scope=email%20profile%20team%20group%20clb.wiki.read%20clb.wiki.write' \
+     --data-urlencode "client_id=${clb_client_id}" \
+     --data-urlencode "client_secret=${clb_client_secret}" |
 
 # Pretty print the JSON response
 json_pp;
