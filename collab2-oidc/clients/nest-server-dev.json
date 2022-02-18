@@ -1,0 +1,22 @@
+{
+  "clientId": "nest-server-dev",
+  "name": "NEST Server",
+  "description": "A simulator for spiking neural network models",
+  "rootUrl": "https://nest-server.apps-dev.hbp.eu",
+  "baseUrl": "/",
+  "redirectUris": [
+    "/relative/redirect/path",
+    "/these/can/use/wildcards/*",
+    "/redirect_uri"
+  ],
+  "webOrigins": ["+"],
+  "bearerOnly": false,
+  "consentRequired": true,
+  "standardFlowEnabled": true,
+  "implicitFlowEnabled": true,
+  "directAccessGrantsEnabled": false,
+  "serviceAccountsEnabled": true,
+  "attributes": {
+    "contacts": "spreizer@web.de"
+  }
+}
