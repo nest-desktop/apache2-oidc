@@ -11,6 +11,7 @@ RUN apt-get autoremove -y && \
 
 # enable needed modules
 RUN a2enmod auth_openidc && \
+    a2enmod headers && \
     a2enmod proxy && \
     a2enmod proxy_http && \
     a2enmod proxy_wstunnel && \
